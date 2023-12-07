@@ -1,5 +1,16 @@
+import BackgroundWeb from "./utils/BackgroundWeb";
+import Header from "./utils/Header/Header";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  //aqui link de imagen para fondo de la web
+  const imagesURL =
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1701884219/samples/Wine-Store/pa3cd7p4sbvy8jwniaw1.webp";
+  return (
+    <>
+      <BackgroundWeb imagesURL={imagesURL} />
+      <Header />
+    </>
+  );
 }
 
 export default App;
