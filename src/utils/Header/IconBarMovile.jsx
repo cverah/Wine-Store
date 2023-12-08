@@ -12,11 +12,6 @@ const IconBarMovile = () => {
         aria-expanded="false"
         style={{ borderRadius: "8px" }}
       >
-        {/* <!--
-Icon when menu is closed.
-
-Menu open: "hidden", Menu closed: "block"
---> */}
         <svg
           className="block h-6 w-6"
           fill="none"
@@ -31,11 +26,6 @@ Menu open: "hidden", Menu closed: "block"
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           />
         </svg>
-        {/* <!--
-Icon when menu is open.
-
-Menu open: "block", Menu closed: "hidden"
---> */}
       </button>
     </div>
   );
