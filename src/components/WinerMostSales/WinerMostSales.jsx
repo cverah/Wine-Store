@@ -5,7 +5,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const WinerMostSales = () => {
   return (
-    <Container className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 relative">
+    <Container className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 relative mb-2">
       <h2
         className="text-2xl font-extrabold uppercase"
         style={{ color: "darkred" }}
