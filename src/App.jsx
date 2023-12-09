@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import BackgroundWeb from "./utils/BackgroundWeb";
+import Home from "./pages/Home";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  //aqui link de imagen para fondo de la web
+  const imagesURL =
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1701884219/samples/Wine-Store/pa3cd7p4sbvy8jwniaw1.webp";
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BackgroundWeb imagesURL={imagesURL} />
+      <Routes>
+        <Route path="/" index element={<Home />} />
+        {/* <Route path="/description_food/:foodId" element={<DescriptionFood />} />
+        <Route
+          path="/create_food"
+          element={<CreateProduct onCreate={handleCreateProduct} />}
+        />
+        <Route
+          path="/update_food/:foodId"
+          element={<UpdateProduct onUpdate={handleUpdateProduct} />}
+        /> */}
+
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
