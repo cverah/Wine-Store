@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
+
 const ItemMenu = () => {
   return (
     <div className="hidden sm:ml-6 sm:block">
       <div className="flex space-x-4">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="text-white rounded-md uppercase px-3 py-2 text-base font-medium hover:underline  underline-offset-4"
           aria-current="page"
         >
-          Dashboard
-        </a>
+          Inicio
+        </Link>
         <a
           href="#"
           className="text-white rounded-md uppercase px-3 py-2 text-base font-medium hover:underline  underline-offset-4"

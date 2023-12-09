@@ -1,8 +1,6 @@
 import BackgroundWeb from "./utils/BackgroundWeb";
-import Header from "./components/Header/Header";
-import WinerMostSales from "./components/WinerMostSales/WinerMostSales";
-import Footer from "./components/Footer/Footer";
-import SectionTitle from "./components/SectionTitle/SectionTitle";
+import Home from "./pages/Home";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 function App() {
   //aqui link de imagen para fondo de la web
@@ -11,10 +9,20 @@ function App() {
   return (
     <>
       <BackgroundWeb imagesURL={imagesURL} />
-      <Header />
-      <SectionTitle />
-      <WinerMostSales />
-      <Footer />
+      <Routes>
+        <Route path="/" index element={<Home />} />
+        {/* <Route path="/description_food/:foodId" element={<DescriptionFood />} />
+        <Route
+          path="/create_food"
+          element={<CreateProduct onCreate={handleCreateProduct} />}
+        />
+        <Route
+          path="/update_food/:foodId"
+          element={<UpdateProduct onUpdate={handleUpdateProduct} />}
+        /> */}
+
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </>
   );
 }
