@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   return (
-    <nav className="bg-gradient-to-br from-red-900 to-pink-500 relative">
+    <nav className="bg-gradient-to-br from-red-900 to-pink-500 sticky top-0 z-50 mb-2">
       <Container className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div
