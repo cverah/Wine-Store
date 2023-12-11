@@ -19,18 +19,18 @@ const HeaderMobile = ({ isOpen }) => {
         >
           Catalogo
         </Link>
-        <a
-          href="#"
+        <Link
+          to="/contacto"
           className="text-white block rounded-md px-3 py-2 text-base uppercase hover:underline underline-offset-4 font-medium"
         >
-          Projects
-        </a>
-        <a
+          Contacto
+        </Link>
+        {/* <a
           href="#"
           className="text-white block rounded-md px-3 py-2 text-base uppercase hover:underline underline-offset-4 font-medium"
         >
           Calendar
-        </a>
+        </a> */}
       </div>
     </div>
   );

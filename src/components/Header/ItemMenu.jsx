@@ -17,18 +17,18 @@ const ItemMenu = () => {
         >
           Catalogo
         </Link>
-        <a
-          href="#"
+        <Link
+          to="/contacto"
           className="text-white rounded-md uppercase px-3 py-2 text-base font-medium hover:underline  underline-offset-4"
         >
-          Projects
-        </a>
-        <a
+          Contacto
+        </Link>
+        {/* <a
           href="#"
           className="text-white rounded-md uppercase px-3 py-2 text-base font-medium hover:underline  underline-offset-4"
         >
           Calendar
-        </a>
+        </a> */}
       </div>
     </div>
   );

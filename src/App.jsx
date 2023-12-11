@@ -2,6 +2,7 @@ import BackgroundWeb from "./utils/BackgroundWeb";
 import Home from "./pages/Home";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Catalogue } from "./pages/Catalogue";
+import Contact from "./pages/Contact";
 
 function App() {
   //aqui link de imagen para fondo de la web
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" index element={<Home />} />
         <Route path="/catalogo" element={<Catalogue />} />
+        <Route path="/contacto" element={<Contact />} />
         {/*}
         <Route
           path="/update_food/:foodId"
