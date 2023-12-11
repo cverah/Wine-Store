@@ -3,8 +3,9 @@ import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { useState } from "react";
 import WindowModal from "../../utils/WindowModal";
+import PropTypes from "prop-types";
 
-const WinerMostSales = () => {
+const WinerMostSales = ({ title, winers }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     console.log("click");
@@ -19,7 +20,7 @@ const WinerMostSales = () => {
           className="text-2xl font-extrabold uppercase"
           style={{ color: "darkred" }}
         >
-          Productos Mas Vendidos
+          {title}
         </h2>
         <hr className="mb-4 border-2" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 relative">
@@ -93,6 +94,11 @@ const WinerMostSales = () => {
       <WindowModal open={open} handleClose={handleClose} />
     </>
   );
+};
+
+WinerMostSales.propTypes = {
+  title: PropTypes.string,
+  winers: PropTypes.array,
 };
 
 export default WinerMostSales;

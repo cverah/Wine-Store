@@ -1,6 +1,7 @@
 import BackgroundWeb from "./utils/BackgroundWeb";
 import Home from "./pages/Home";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { Catalogue } from "./pages/Catalogue";
 
 function App() {
   //aqui link de imagen para fondo de la web
@@ -11,11 +12,8 @@ function App() {
       <BackgroundWeb imagesURL={imagesURL} />
       <Routes>
         <Route path="/" index element={<Home />} />
-        {/* <Route path="/description_food/:foodId" element={<DescriptionFood />} />
-        <Route
-          path="/create_food"
-          element={<CreateProduct onCreate={handleCreateProduct} />}
-        />
+        <Route path="/catalogo" element={<Catalogue />} />
+        {/*}
         <Route
           path="/update_food/:foodId"
           element={<UpdateProduct onUpdate={handleUpdateProduct} />}

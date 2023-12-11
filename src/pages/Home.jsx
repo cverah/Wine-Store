@@ -4,11 +4,12 @@ import WinerMostSales from "../components/WinerMostSales/WinerMostSales";
 import Footer from "../components/Footer/Footer";
 
 const Home = () => {
+  const winer = [];
   return (
     <>
       <Header />
       <SectionTitle />
-      <WinerMostSales />
+      <WinerMostSales title={"Productos mas vendidos"} winers={winer} />
       <Footer />
     </>
   );

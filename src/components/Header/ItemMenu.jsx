@@ -11,12 +11,12 @@ const ItemMenu = () => {
         >
           Inicio
         </Link>
-        <a
-          href="#"
+        <Link
+          to="/catalogo"
           className="text-white rounded-md uppercase px-3 py-2 text-base font-medium hover:underline  underline-offset-4"
         >
-          Team
-        </a>
+          Catalogo
+        </Link>
         <a
           href="#"
           className="text-white rounded-md uppercase px-3 py-2 text-base font-medium hover:underline  underline-offset-4"
