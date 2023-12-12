@@ -3,6 +3,9 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
 import AttachEmailIcon from "@mui/icons-material/AttachEmail";
 import PhonePausedOutlinedIcon from "@mui/icons-material/PhonePausedOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
+
+import emailjs from "@emailjs/browser";
 import {
   Button,
   Container,
@@ -17,13 +20,49 @@ import {
   RegistrationContact,
   initialValues,
 } from "../../formik/formik_contact";
+import { credential_send_email } from "../../credentail_send_email";
+import {
+  messageError,
+  messageSuccess,
+} from "../../messages_modal/modal_messages";
+import { useRef } from "react";
 
 const RegisterContact = () => {
+  const form = useRef();
   function handleForm(values, { setSubmitting }) {
-    console.log(values);
-    setTimeout(() => {
-      setSubmitting(false);
-    }, 500);
+    // console.log(values);
+    //creando formulario invisible para que acpete emailjs
+    const form = document.createElement("form");
+    form.style.display = "none"; // Hace que el formulario sea invisible
+    for (const key in values) {
+      if (Object.prototype.hasOwnProperty.call(values, key)) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = values[key];
+        form.appendChild(input);
+      }
+    }
+    document.body.appendChild(form);
+    //console.log(form);
+    emailjs
+      .sendForm(
+        credential_send_email.service_id,
+        credential_send_email.template_id,
+        form,
+        credential_send_email.user_id
+      )
+      .then((result) => {
+        if (result.text === "OK") {
+          setSubmitting(false);
+          messageSuccess(
+            "!Correo Enviado¡, me contactare contigo en el menor tiempo posible, gracias por contactarme"
+          );
+        } else {
+          messageError(`Ocurrio un problema ${result.text}`);
+        }
+      })
+      .catch((error) => console.log(error));
   }
 
   return (
@@ -46,7 +85,7 @@ const RegisterContact = () => {
         validationSchema={RegistrationContact.Contact}
       >
         {({ submitForm, isSubmitting }) => (
-          <Form className=" backdrop-blur-md p-2 rounded-lg">
+          <Form className=" backdrop-blur-md p-2 rounded-lg" ref={form}>
             <div className="flex flex-col space-y-4 mb-3 sm:grid sm:grid-cols-2 sm:gap-1 sm:space-y-0 sm:mb-8 md:gap-x-4 md:gap-y-6">
               <div className="flex flex-col space-y-1">
                 <label htmlFor="fullname" className="font-bold">
@@ -107,29 +146,31 @@ const RegisterContact = () => {
               </div>
 
               <div className="flex flex-col space-y-1">
-                <label htmlFor="phone" className="font-bold">
-                  Celular
-                </label>
-                <Field
-                  component={TextField}
-                  name="phone"
-                  id="phone"
-                  type="text"
-                  placeholder="Ejm: 958415624"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <PhonePausedOutlinedIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
+                <FormControl>
+                  <label htmlFor="phone" className="font-bold">
+                    Celular
+                  </label>
+                  <Field
+                    component={TextField}
+                    name="phone"
+                    id="phone"
+                    as={Text}
+                    placeholder="Ejm: 958415624"
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <PhonePausedOutlinedIcon />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </FormControl>
               </div>
 
               <div className="flex flex-col space-y-1">
                 <FormControl>
                   <label htmlFor="city" className="font-bold">
-                    Celular
+                    Ciudad
                   </label>
                   <Field id="city" name="city" as={Select}>
                     <MenuItem value="">--Seleccione--</MenuItem>
@@ -156,7 +197,18 @@ const RegisterContact = () => {
                   width: "100%",
                 }}
               >
-                Enviar Informacion
+                {isSubmitting ? (
+                  <CircularProgress
+                    color="warning"
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+                ) : (
+                  "Enviar Informacion"
+                )}
               </Button>
             </div>
           </Form>
