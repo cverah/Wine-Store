@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Catalogue } from "./pages/Catalogue";
 import Contact from "./pages/Contact";
+import GoWhastapp from "./utils/GoWhastapp";
 
 function App() {
   //aqui link de imagen para fondo de la web
@@ -23,6 +24,7 @@ function App() {
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <GoWhastapp />
     </>
   );
 }
