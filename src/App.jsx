@@ -1,6 +1,9 @@
 import BackgroundWeb from "./utils/BackgroundWeb";
 import Home from "./pages/Home";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { Catalogue } from "./pages/Catalogue";
+import Contact from "./pages/Contact";
+import GoWhastapp from "./utils/GoWhastapp";
 
 function App() {
   //aqui link de imagen para fondo de la web
@@ -11,11 +14,9 @@ function App() {
       <BackgroundWeb imagesURL={imagesURL} />
       <Routes>
         <Route path="/" index element={<Home />} />
-        {/* <Route path="/description_food/:foodId" element={<DescriptionFood />} />
-        <Route
-          path="/create_food"
-          element={<CreateProduct onCreate={handleCreateProduct} />}
-        />
+        <Route path="/catalogo" element={<Catalogue />} />
+        <Route path="/contacto" element={<Contact />} />
+        {/*}
         <Route
           path="/update_food/:foodId"
           element={<UpdateProduct onUpdate={handleUpdateProduct} />}
@@ -23,6 +24,7 @@ function App() {
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <GoWhastapp />
     </>
   );
 }

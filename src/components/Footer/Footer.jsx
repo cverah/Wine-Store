@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
         <hr />
         <div className="py-2 normal-case">
-          <p>© Copyrigth {year}</p>
+          <p>© Copyrigth {year} - CMVH</p>
         </div>
       </Container>
     </footer>
