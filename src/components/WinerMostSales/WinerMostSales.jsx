@@ -41,24 +41,24 @@ const WinerMostSales = ({ title, winers }) => {
                   alt=""
                   className="h-72 rounded-lg"
                 />
-                <div className="flex gap-4 items-center justify-center">
+                <div className="flex gap-4 items-center justify-center xl:items-baseline">
                   <strong className="uppercase" style={{ color: "darkred" }}>
                     Precio <small>(Unidad {wine.content})</small>:
                   </strong>
                   <strong
-                    className="uppercase text-2xl xl:text-xl"
+                    className="uppercase text-2xl xl:text-xl xl:w-2/5"
                     style={{ color: "black" }}
                   >
                     {wine.price_unit}
                   </strong>
                 </div>
                 {wine.box["quantity"] && wine.box["price_box"] ? (
-                  <div className="flex gap-4 items-center justify-center">
+                  <div className="flex gap-4 items-center justify-center xl:items-baseline">
                     <strong className="uppercase" style={{ color: "darkred" }}>
                       Precio <small>(Caja {wine.box["quantity"]} Unid.)</small>:
                     </strong>
                     <strong
-                      className="uppercase text-2xl xl:text-xl"
+                      className="uppercase text-2xl xl:text-xl xl:w-2/5"
                       style={{ color: "black" }}
                     >
                       {wine.box["price_box"]}
