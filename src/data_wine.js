@@ -97,7 +97,7 @@ export const dataWine = [
     },
     qualification: 4.5,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702774626/samples/Wine-Store/hvunmftiszrooice6dgf.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702774825/samples/Wine-Store/swtcyiafhwfvycbuhtld.webp",
   },
   {
     id: count(),
@@ -144,4 +144,19 @@ export const dataWine = [
     url_picture:
       "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702916667/samples/Wine-Store/r2qvpsrm0fvyckhwnjec.webp",
   },
+  // {
+  //   id: count(),
+  //   name: "CHAMPAGNE",
+  //   type: "Espumante Gasificador",
+  //   size: "Normal",
+  //   content: "750 ml",
+  //   price_unit: "S/ 15.00",
+  //   box: {
+  //     price_box: "S/ 95.00",
+  //     quantity: 12,
+  //   },
+  //   qualification: 3.7,
+  //   url_picture:
+  //     "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702916667/samples/Wine-Store/r2qvpsrm0fvyckhwnjec.webp",
+  // },
 ];

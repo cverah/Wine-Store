@@ -7,8 +7,9 @@ import PropTypes from "prop-types";
 
 const WinerMostSales = ({ title, winers }) => {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => {
+  const handleOpen = (idWine) => {
     console.log("click");
+    console.log(idWine);
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
@@ -24,70 +25,79 @@ const WinerMostSales = ({ title, winers }) => {
         </h2>
         <hr className="mb-4 border-2" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 relative">
-          {/* item */}
-          <div className=" backdrop-blur-lg p-2 rounded-lg">
-            <div className="flex flex-col gap-1">
-              <h3
-                className="text-lg uppercase text-center font-bold tracking-wide"
-                style={{ color: "darkred" }}
-              >
-                Vino Borgoña
-              </h3>
-              <img
-                src="https://res.cloudinary.com/dvxvdktvr/image/upload/v1702078543/samples/Wine-Store/gxay63fvbi1scmsv4t8z.webp"
-                alt=""
-                className="h-72 rounded-lg"
-              />
-              <div className="flex gap-4 items-center justify-center">
-                <strong className="uppercase" style={{ color: "darkred" }}>
-                  Precio <small>(Unidad 750ml)</small>:
-                </strong>
-                <strong
-                  className="uppercase text-2xl xl:text-xl"
-                  style={{ color: "black" }}
+          {winers.map((wine) => (
+            <div key={wine.id} className="backdrop-blur-lg p-2 rounded-lg">
+              <div className="flex flex-col gap-1">
+                <h3
+                  className="text-lg uppercase text-center font-bold tracking-wide"
+                  style={{ color: "darkred" }}
                 >
-                  S/ 12.00
-                </strong>
-              </div>
-              <div className="flex gap-4 items-center justify-center">
-                <strong className="uppercase" style={{ color: "darkred" }}>
-                  Precio <small>(Caja 12 Unid.)</small>:
-                </strong>
-                <strong
-                  className="uppercase text-2xl xl:text-xl"
-                  style={{ color: "black" }}
+                  {wine.name}
+                </h3>
+                <img
+                  src={wine.url_picture}
+                  alt=""
+                  className="h-72 rounded-lg"
+                />
+                <div className="flex gap-4 items-center justify-center">
+                  <strong className="uppercase" style={{ color: "darkred" }}>
+                    Precio <small>(Unidad {wine.content})</small>:
+                  </strong>
+                  <strong
+                    className="uppercase text-2xl xl:text-xl"
+                    style={{ color: "black" }}
+                  >
+                    {wine.price_unit}
+                  </strong>
+                </div>
+                {wine.box["quantity"] && wine.box["price_box"] ? (
+                  <div className="flex gap-4 items-center justify-center">
+                    <strong className="uppercase" style={{ color: "darkred" }}>
+                      Precio <small>(Caja {wine.box["quantity"]} Unid.)</small>:
+                    </strong>
+                    <strong
+                      className="uppercase text-2xl xl:text-xl"
+                      style={{ color: "black" }}
+                    >
+                      {wine.box["price_box"]}
+                    </strong>
+                  </div>
+                ) : (
+                  <div className="flex gap-4 items-center justify-center">
+                    <strong className="uppercase" style={{ color: "darkred" }}>
+                      Esta bebida solo se vende x unidad
+                    </strong>
+                  </div>
+                )}
+                <Button
+                  variant="contained"
+                  startIcon={<RemoveRedEyeIcon />}
+                  style={{
+                    backgroundColor: "darkred",
+                  }}
+                  classes={{
+                    focusVisible: "focus-visible",
+                  }}
+                  onClick={() => handleOpen(wine.id)}
                 >
-                  S/ 85.00
-                </strong>
+                  Ver Detalles
+                </Button>
+                <Button
+                  component={Link}
+                  variant="contained"
+                  startIcon={<WhatsAppIcon />}
+                  style={{
+                    backgroundColor: "darkgreen",
+                  }}
+                  classes={{
+                    focusVisible: "focus-visible",
+                  }}
+                >
+                  Quiero comprarlo
+                </Button>
               </div>
-              <Button
-                variant="contained"
-                startIcon={<RemoveRedEyeIcon />}
-                style={{
-                  backgroundColor: "darkred",
-                }}
-                classes={{
-                  focusVisible: "focus-visible",
-                }}
-                onClick={handleOpen}
-              >
-                Ver Detalles
-              </Button>
-              <Button
-                component={Link}
-                variant="contained"
-                startIcon={<WhatsAppIcon />}
-                style={{
-                  backgroundColor: "darkgreen",
-                }}
-                classes={{
-                  focusVisible: "focus-visible",
-                }}
-              >
-                Quiero comprarlo
-              </Button>
             </div>
-          </div>
+          ))}
         </div>
       </Container>
 
