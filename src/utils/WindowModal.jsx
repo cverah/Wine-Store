@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { url_whatsapp } from "../url_whatsapp";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -17,7 +19,14 @@ const style = {
   p: 4, //padding
 };
 
-const WindowModal = ({ open, handleClose }) => {
+const WindowModal = ({ open, handleClose, Wine }) => {
+  const navigate = useNavigate();
+
+  const handleContact = (event) => {
+    event.preventDefault();
+    navigate("/contacto");
+  };
+  console.log(Wine);
   return (
     <Modal
       open={open}
@@ -33,7 +42,7 @@ const WindowModal = ({ open, handleClose }) => {
           <div className="w-full sm:w-1/2">
             <div className="flex justify-center">
               <img
-                src="https://res.cloudinary.com/dvxvdktvr/image/upload/v1702078543/samples/Wine-Store/gxay63fvbi1scmsv4t8z.webp"
+                src={Wine.url_picture}
                 alt="img"
                 className="rounded-lg shadow shadow-slate-400 h-72 sm:h-96"
               />
@@ -44,7 +53,7 @@ const WindowModal = ({ open, handleClose }) => {
               id="modal-modal-title"
               className="text-center text-red-800 text-xl font-bold sm:text-3xl"
             >
-              Vino Borgoña
+              {Wine.name}
             </h3>
             <Typography
               id="modal-modal-title"
@@ -52,17 +61,17 @@ const WindowModal = ({ open, handleClose }) => {
               component="small"
               className="text-center text-red-800 text-base"
             >
-              Normal - 750 ml
+              {Wine.size} - {Wine.content}
             </Typography>
 
             <table className="table-auto mt-3 border-collapse w-full">
               <tbody>
-                <tr className="text-lg">
-                  <td>
+                <tr className="text-lg sm:text-base md:text-lg">
+                  <td className="flex items-start">
                     <strong className="text-red-800 text-xl">Tipo:</strong>
                   </td>
                   <td>
-                    <p className="font-bold">Semi Seco Tinto</p>
+                    <p className="font-bold">{Wine.type}</p>
                   </td>
                 </tr>
                 <tr className="h-3"></tr>
@@ -71,8 +80,17 @@ const WindowModal = ({ open, handleClose }) => {
                     <strong className="text-red-800 text-xl">Precio:</strong>
                   </td>
                   <td>
-                    <p className="font-bold">S/ 12.00 (x unidad)</p>
-                    <p className="font-bold">S/ 85.00 (x caja 12 uds)</p>
+                    <p className="font-bold">{Wine.price_unit} (x unidad)</p>
+                    {Wine?.box?.["price_box"] && Wine?.box?.["quantity"] ? (
+                      <p className="font-bold">
+                        {Wine.box["price_box"]} (x caja {Wine.box["quantity"]}{" "}
+                        uds)
+                      </p>
+                    ) : (
+                      <p className="font-bold">
+                        ESTA BEBIDA SOLO SE VENDE X UNIDAD
+                      </p>
+                    )}
                   </td>
                 </tr>
                 <tr className="h-3"></tr>
@@ -80,6 +98,7 @@ const WindowModal = ({ open, handleClose }) => {
                   <td colSpan="2">
                     <Button
                       variant="contained"
+                      component={Link}
                       startIcon={<WhatsAppIcon />}
                       style={{
                         backgroundColor: "darkgreen",
@@ -88,6 +107,9 @@ const WindowModal = ({ open, handleClose }) => {
                         focusVisible: "focus-visible",
                       }}
                       className="w-full"
+                      href={url_whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Quiero Comprar
                     </Button>
@@ -107,6 +129,8 @@ const WindowModal = ({ open, handleClose }) => {
                         focusVisible: "focus-visible",
                       }}
                       className="w-full"
+                      href="/contacto"
+                      onClick={handleContact}
                     >
                       Quiero comprar x mayor
                     </Button>
@@ -133,6 +157,7 @@ const WindowModal = ({ open, handleClose }) => {
 WindowModal.propTypes = {
   open: PropTypes.bool,
   handleClose: PropTypes.func,
+  Wine: PropTypes.object,
 };
 
 export default WindowModal;

@@ -4,12 +4,14 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { useState } from "react";
 import WindowModal from "../../utils/WindowModal";
 import PropTypes from "prop-types";
+import { url_whatsapp } from "../../url_whatsapp";
 
 const WinerMostSales = ({ title, winers }) => {
   const [open, setOpen] = useState(false);
+  const [dataWine, setdataWine] = useState({});
   const handleOpen = (idWine) => {
-    console.log("click");
-    console.log(idWine);
+    const Wine = winers.find((element) => element.id === idWine);
+    setdataWine(Wine);
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
@@ -92,6 +94,9 @@ const WinerMostSales = ({ title, winers }) => {
                   classes={{
                     focusVisible: "focus-visible",
                   }}
+                  href={url_whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Quiero comprarlo
                 </Button>
@@ -101,7 +106,7 @@ const WinerMostSales = ({ title, winers }) => {
         </div>
       </Container>
 
-      <WindowModal open={open} handleClose={handleClose} />
+      <WindowModal open={open} handleClose={handleClose} Wine={dataWine} />
     </>
   );
 };

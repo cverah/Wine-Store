@@ -10,7 +10,7 @@ const Home = () => {
     .sort((a, b) => b.qualification - a.qualification)
     .slice(0, 5);
 
-  console.log(winers);
+  // console.log(winers);
   return (
     <>
       <Header />
