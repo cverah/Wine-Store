@@ -11,13 +11,24 @@ import "./slider.css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const SliderWine = () => {
+  const imgWines = [
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941596/samples/Wine-Store/slider/yvgfabipdmtnvwirkknd.webp",
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941596/samples/Wine-Store/slider/jddwqifsooebxxkhkgpk.webp",
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941596/samples/Wine-Store/slider/zd5tbvgw3o8rnaaal1hl.webp",
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941596/samples/Wine-Store/slider/xgcubey26zokzzan5lnr.webp",
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941596/samples/Wine-Store/slider/iszb1xwubo2fhvnjkkhc.webp",
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/hwgotkpexvowsjoyjfig.webp",
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/ebkhyfyhnvhdvulxqqvl.webp",
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/lmaczupodtdnpitych73.webp",
+    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/rk9lrkqixfz5qfr3mopg.webp",
+  ];
   return (
     <>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 102500,
+          delay: 1500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -27,24 +38,11 @@ const SliderWine = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img
-            src="https://res.cloudinary.com/dvxvdktvr/image/upload/v1702055658/samples/Wine-Store/vqxsy4doxcmucy4ai2mk.jpg"
-            alt="img-1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://res.cloudinary.com/dvxvdktvr/image/upload/v1702055661/samples/Wine-Store/aly1ouokieezlplop8md.jpg"
-            alt="img-2"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://res.cloudinary.com/dvxvdktvr/image/upload/v1702055661/samples/Wine-Store/ruxqb3dwq9usimvpen5m.jpg"
-            alt="img-3"
-          />
-        </SwiperSlide>
+        {imgWines.map((imgWine, index) => (
+          <SwiperSlide key={index}>
+            <img src={imgWine} alt={index} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
