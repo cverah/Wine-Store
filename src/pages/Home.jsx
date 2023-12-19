@@ -4,6 +4,8 @@ import WinerMostSales from "../components/WinerMostSales/WinerMostSales";
 import Footer from "../components/Footer/Footer";
 import { dataWine } from "../data_wine";
 
+import ButtonLink from "../components/ButtonLink";
+
 const Home = () => {
   //ordenar descendente y los primeros 5
   const winers = dataWine
@@ -15,6 +17,7 @@ const Home = () => {
     <>
       <Header />
       <SectionTitle />
+      <ButtonLink content="Ir al catálogo" route="/catalogo" />
       <WinerMostSales title={"Productos mas vendidos"} winers={winers} />
       <Footer />
     </>
