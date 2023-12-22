@@ -146,6 +146,21 @@ export const dataWine = [
   },
   {
     id: count(),
+    name: "Vino Higo",
+    type: "Higo Dulce",
+    size: "Normal",
+    content: "750 ml",
+    price_unit: "S/ 15.00",
+    box: {
+      price_box: "S/ 100.00",
+      quantity: 12,
+    },
+    qualification: 3.8,
+    url_picture:
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703281956/samples/Wine-Store/new_photos/xsmvbsfqa80ty53ggtgq.webp",
+  },
+  {
+    id: count(),
     name: "Vino Oporto",
     type: "Dulce Fortificado",
     size: "Normal",
