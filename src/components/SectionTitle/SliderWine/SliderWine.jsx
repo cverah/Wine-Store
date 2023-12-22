@@ -20,7 +20,7 @@ const SliderWine = () => {
     "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/hwgotkpexvowsjoyjfig.webp",
     "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/ebkhyfyhnvhdvulxqqvl.webp",
     "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/lmaczupodtdnpitych73.webp",
-    "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/rk9lrkqixfz5qfr3mopg.webp",
+    // "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702941597/samples/Wine-Store/slider/rk9lrkqixfz5qfr3mopg.webp",
   ];
   return (
     <>
@@ -28,7 +28,7 @@ const SliderWine = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 1500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{

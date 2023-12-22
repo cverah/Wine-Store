@@ -39,7 +39,7 @@ const WinerMostSales = ({ title, winers }) => {
                 <img
                   src={wine.url_picture}
                   alt=""
-                  className="h-72 rounded-lg"
+                  className="h-80 rounded-lg w-3/5 sm:w-3/4 mx-auto my-0 lg:w-full"
                 />
                 <div className="flex gap-4 items-center justify-center xl:items-baseline">
                   <strong className="uppercase" style={{ color: "darkred" }}>

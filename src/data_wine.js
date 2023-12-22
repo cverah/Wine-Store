@@ -22,7 +22,7 @@ export const dataWine = [
     },
     qualification: 3.0,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702773478/samples/Wine-Store/rupqvrahkxuwvcwqdhpk.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703275693/samples/Wine-Store/new_photos/c1l4ww3frjrfvpsrnusx.webp",
   },
   {
     id: count(),
@@ -37,11 +37,11 @@ export const dataWine = [
     },
     qualification: 3.5,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702773774/samples/Wine-Store/mm9prxdcf3yof328ohlh.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703275989/samples/Wine-Store/new_photos/dmcssfggrcchhxkenzne.webp",
   },
   {
     id: count(),
-    name: "ViNO DAMAJUANA BORGOÑA",
+    name: "VINO DAMAJUANA BORGOÑA",
     type: "Semi Seco Tinto",
     size: "DAMAJUANA",
     content: "2 litros",
@@ -52,11 +52,11 @@ export const dataWine = [
     },
     qualification: 3.3,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702774225/samples/Wine-Store/uoz3eb7ne1vqnjni3hq3.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703276123/samples/Wine-Store/new_photos/vdv94sl7qhc9vyvis4q3.webp",
   },
   {
     id: count(),
-    name: "ViNO DAMAJUANA MISTELA",
+    name: "VINO DAMAJUANA MISTELA",
     type: "Especial Blanco",
     size: "DAMAJUANA",
     content: "2 litros",
@@ -67,7 +67,7 @@ export const dataWine = [
     },
     qualification: 3.2,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702774374/samples/Wine-Store/ifativhmsgqvzmtitmcw.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703276293/samples/Wine-Store/new_photos/p7an3wcw4roltspqhguv.webp",
   },
   {
     id: count(),
@@ -77,12 +77,12 @@ export const dataWine = [
     content: "750 ml",
     price_unit: "S/ 15.00",
     box: {
-      price_box: "S/ 95.00",
+      price_box: "S/ 100.00",
       quantity: 12,
     },
     qualification: 4.5,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702774626/samples/Wine-Store/hvunmftiszrooice6dgf.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703276353/samples/Wine-Store/new_photos/hbvvoapl66v95hg0qccf.webp",
   },
   {
     id: count(),
@@ -92,12 +92,12 @@ export const dataWine = [
     content: "750 ml",
     price_unit: "S/ 15.00",
     box: {
-      price_box: "S/ 95.00",
+      price_box: "S/ 100.00",
       quantity: 12,
     },
     qualification: 4.5,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702774825/samples/Wine-Store/swtcyiafhwfvycbuhtld.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703277515/samples/Wine-Store/new_photos/pqvhpzpbv07gw5iglh3q.webp",
   },
   {
     id: count(),
@@ -107,12 +107,12 @@ export const dataWine = [
     content: "750 ml c/u",
     price_unit: "S/ 30.00",
     box: {
-      price_box: "S/ 95.00",
+      price_box: "S/ 140.00",
       quantity: 6,
     },
     qualification: 4.8,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702913675/samples/Wine-Store/z3jrawpkssua4v8wzm6n.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703276487/samples/Wine-Store/new_photos/fpexnk6w1oq9zenhpovb.webp",
   },
   {
     id: count(),
@@ -120,14 +120,14 @@ export const dataWine = [
     type: "Semi Seco Tinto",
     size: "MAMAJUANA",
     content: "5 litros",
-    price_unit: "S/ 50.00",
+    price_unit: "S/ 55.00",
     box: {
       price_box: null,
       quantity: null,
     },
     qualification: 4.6,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702916179/samples/Wine-Store/nwnhuadehinseqhxuiqx.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703276604/samples/Wine-Store/new_photos/osi9o1cmuxx8teirnwle.webp",
   },
   {
     id: count(),
@@ -137,12 +137,27 @@ export const dataWine = [
     content: "750 ml",
     price_unit: "S/ 15.00",
     box: {
-      price_box: "S/ 95.00",
+      price_box: "S/ 100.00",
       quantity: 12,
     },
     qualification: 3.5,
     url_picture:
-      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1702916667/samples/Wine-Store/r2qvpsrm0fvyckhwnjec.webp",
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703276740/samples/Wine-Store/new_photos/n6qwc3wvydtmsrsk8bmv.webp",
+  },
+  {
+    id: count(),
+    name: "Vino Oporto",
+    type: "Dulce Fortificado",
+    size: "Normal",
+    content: "750 ml",
+    price_unit: "S/ 15.00",
+    box: {
+      price_box: "S/ 100.00",
+      quantity: 12,
+    },
+    qualification: 4.3,
+    url_picture:
+      "https://res.cloudinary.com/dvxvdktvr/image/upload/v1703277096/samples/Wine-Store/new_photos/ioywrxesbanvpxfdjbsx.webp",
   },
   // {
   //   id: count(),
@@ -152,7 +167,7 @@ export const dataWine = [
   //   content: "750 ml",
   //   price_unit: "S/ 15.00",
   //   box: {
-  //     price_box: "S/ 95.00",
+  //     price_box: "S/ 100.00",
   //     quantity: 12,
   //   },
   //   qualification: 3.7,
